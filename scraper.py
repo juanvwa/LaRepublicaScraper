@@ -4,11 +4,12 @@ import os
 import datetime
 
 HOME_URL = "https://www.larepublica.co/"
-
-XPATH_LINK_TO_ARTICLE = "//text-fill[not(@class)]/a/@href"
-XPATH_TITLE = '//div[@class="mb-auto"]/h2/a/text()'
+XPATH_LINK_TO_ARTICLE = (
+    '//div[@class="col mb-4"]/div[@class="news V_Title_Img"]/a/@href'
+)
+XPATH_TITLE = '//div[@class="mb-auto"]/text-fill/a/text()'
 XPATH_SUMMARY = '//div[@class="lead"]/p/text()'
-XPATH_BODY = '//div[@class="html-content"]/p[coconot@class]/text()'
+XPATH_BODY = '//div[@class="html-content"]/p/text()'
 
 
 def parse_notice(link, today):
@@ -26,7 +27,7 @@ def parse_notice(link, today):
             except IndexError:
                 return
 
-            with open(f"{today}/{title}.txt", "w", encoding="utf-8") as f:
+            with open("{}/{}.txt".format(today, title), "w", encoding="utf-8") as f:
                 f.write(title)
                 f.write("\n\n")
                 f.write(summary)

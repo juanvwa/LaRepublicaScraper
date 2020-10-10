@@ -1,0 +1,4 @@
+links = //div["news V_Title_Img"]/a/@href
+title = //div[@class="mb-auto"]/h2/a/text()
+resume = //div[@class="lead"]/p/text()
+body = //div[@class="html-content"]/p/text()

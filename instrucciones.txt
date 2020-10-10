@@ -1,0 +1,19 @@
+para crear un virtual environment se usa:
+
+
+python3 -m venv nombredeseado
+
+Para activarlo se usará :
+
+nombredeseado/bin/activate
+
+actualizar pip:
+
+python3 -m pip install pip --upgrade
+
+
+Para obtener valores y texto en chrome
+
+.map(x => x.wholeText)
+
+.map(x => x.value)
